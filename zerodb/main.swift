@@ -3,7 +3,7 @@
 //  zerodb
 //
 //  Created by Kesara Rathnayake on 27/05/18.
-//  Copyright © 2018 fq.nz. All rights reserved.
+//  Copyright © 2018 Kesara Rathnayake. All rights reserved.
 //
 
 import Foundation
