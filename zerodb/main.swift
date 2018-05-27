@@ -42,7 +42,7 @@ while (true) {
                 continue
             }
         case Commands.delete:
-            print(input.description())
+            databse.delete(name: userInputArray[1])
         }
     }
 }

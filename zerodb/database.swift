@@ -14,12 +14,16 @@ class Database {
     init() {
         self.data = [String: [String?]]()
     }
-    
+
     func insert(name: String, values: [String]) {
         self.data[name] = values
     }
-    
+
     func select(name: String) -> [String?]? {
         return self.data[name]
+    }
+
+    func delete(name: String) {
+        self.data.removeValue(forKey: name)
     }
 }
