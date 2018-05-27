@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D315EC2320BAB3B800DD715D /* database.swift in Sources */ = {isa = PBXBuildFile; fileRef = D315EC2220BAB3B800DD715D /* database.swift */; };
+		D315EC2520BAB47500DD715D /* commands.swift in Sources */ = {isa = PBXBuildFile; fileRef = D315EC2420BAB47500DD715D /* commands.swift */; };
 		D333D85120B9C473001E1EBC /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D333D85020B9C473001E1EBC /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +27,8 @@
 /* Begin PBXFileReference section */
 		D315EC2020BAB06D00DD715D /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		D315EC2120BAB06D00DD715D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		D315EC2220BAB3B800DD715D /* database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = database.swift; sourceTree = "<group>"; };
+		D315EC2420BAB47500DD715D /* commands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = commands.swift; sourceTree = "<group>"; };
 		D333D84D20B9C473001E1EBC /* zerodb */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = zerodb; sourceTree = BUILT_PRODUCTS_DIR; };
 		D333D85020B9C473001E1EBC /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -62,6 +66,8 @@
 			isa = PBXGroup;
 			children = (
 				D333D85020B9C473001E1EBC /* main.swift */,
+				D315EC2220BAB3B800DD715D /* database.swift */,
+				D315EC2420BAB47500DD715D /* commands.swift */,
 			);
 			path = zerodb;
 			sourceTree = "<group>";
@@ -123,6 +129,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D315EC2520BAB47500DD715D /* commands.swift in Sources */,
+				D315EC2320BAB3B800DD715D /* database.swift in Sources */,
 				D333D85120B9C473001E1EBC /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
