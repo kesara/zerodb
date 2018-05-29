@@ -23,17 +23,17 @@ extension Commands {
     func description() -> String {
         switch self {
         case .quit:
-            return "Quit"
+            return "Quit ZeroDB"
         case .help:
-            return "Help"
+            return "Show help. help <command> for command specific help."
         case .version:
-            return "Version"
+            return "Show ZeroDB version information"
         case .insert:
-            return "Insert query"
+            return "insert <key> <value_1> <value_2> ... <value_n>"
         case .select:
-            return "Select query"
+            return "select <key>"
         case .delete:
-            return "Delete query"
+            return "delete <key>"
         }
     }
 }
@@ -53,7 +53,7 @@ func showHelp() {
     /* Show help */
     let commands = [Commands.quit, Commands.help, Commands.version, Commands.insert, Commands.select, Commands.delete]
     for command in commands {
-        print("\(command)\t\(command.description())")
+        printHelp(command)
     }
 }
 
@@ -84,4 +84,26 @@ func printPrompt() {
     let prompt = "0"
     let terminator = ">"
     print(prompt, terminator: terminator)
+}
+
+func printError(_ message: String, command: Commands?) {
+    /* Print error function:
+     *      Print given error message and command usage if command is provided
+     *      Paramertes:
+     *          message: error message
+     *          command: command (optional)
+     */
+    print("Error: \(message)")
+    if let givenCommand = command {
+        print("Usage: \(givenCommand.description())")
+    }
+}
+
+func printHelp(_ command: Commands) {
+    /* Print help function:
+     *      Print help for given command
+     *      Parameters:
+     *          command: command
+     */
+    print("\(command):\t\(command.description())")
 }
