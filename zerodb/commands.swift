@@ -1,6 +1,6 @@
 //
 //  commands.swift
-//  zerodb
+//  ZeroDB Commands class
 //
 //  Created by Kesara Rathnayake on 27/05/18.
 //  Copyright © 2018 Kesara Rathnayake. All rights reserved.
@@ -9,6 +9,7 @@
 import Foundation
 
 enum Commands: String {
+    // valid commands
     case quit = "quit"
     case help = "help"
     case version = "version"
@@ -18,6 +19,7 @@ enum Commands: String {
 }
 
 extension Commands {
+    // command descriptions
     func description() -> String {
         switch self {
         case .quit:
@@ -37,15 +39,18 @@ extension Commands {
 }
 
 extension Bundle {
+    // release version
     var releaseVersion: String? {
         return infoDictionary?["CFBundleShortVersionString"] as? String
     }
+    // bundle version
     var buildVersion: String? {
         return infoDictionary?["CFBundleVersion"] as? String
     }
 }
 
 func showHelp() {
+    /* Show help */
     let commands = [Commands.quit, Commands.help, Commands.version, Commands.insert, Commands.select, Commands.delete]
     for command in commands {
         print("\(command)\t\(command.description())")
@@ -53,6 +58,7 @@ func showHelp() {
 }
 
 func showVersion() {
+    /* Show version */
     let noTerminator = ""
     print("ZeroDB", terminator: noTerminator)
     if let releaseVersion = Bundle.main.releaseVersion {
@@ -65,6 +71,7 @@ func showVersion() {
 }
 
 func printWelcome() {
+    /* Print welcome */
     print("""
         0000000000
         0 ZeroDB 0
@@ -73,6 +80,7 @@ func printWelcome() {
 }
 
 func printPrompt() {
+    /* Print REPL prompt */
     let prompt = "0"
     let terminator = ">"
     print(prompt, terminator: terminator)

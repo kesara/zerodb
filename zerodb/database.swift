@@ -1,6 +1,6 @@
 //
 //  database.swift
-//  zerodb
+//  ZeroDB Database class
 //
 //  Created by Kesara Rathnayake on 27/05/18.
 //  Copyright © 2018 Kesara Rathnayake. All rights reserved.
@@ -9,21 +9,40 @@
 import Foundation
 
 class Database {
+    // data dictionary
     var data: [String: [String?]]
     
     init() {
         self.data = [String: [String?]]()
     }
 
-    func insert(name: String, values: [String]) {
-        self.data[name] = values
+    func insert(key: String, values: [String]) {
+        /* Insert function:
+         *      Insert key, value to the database
+         *      Parameters:
+         *          key: key
+         *          values: values as an array
+         */
+        self.data[key] = values
     }
 
-    func select(name: String) -> [String?]? {
-        return self.data[name]
+    func select(key: String) -> [String?]? {
+        /*  Select function:
+         *      Return values array for given key
+         *      Parameters:
+         *          key: key
+         *      Return:
+         *          Values for given key, nil if key is missing.
+         */
+        return self.data[key]
     }
 
-    func delete(name: String) {
-        self.data.removeValue(forKey: name)
+    func delete(key: String) {
+        /* Delete function:
+         *      Delete record for given key
+         *      Parameters:
+         *          key: key
+         */
+        self.data.removeValue(forKey: key)
     }
 }
